@@ -141,12 +141,16 @@ At college I was Student Co-ordinator of the Coding Club and of the Training & P
 ## GitHub activity
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=TanmoyBiswas478&show_icons=true&theme=github_dark_dimmed&hide_border=true" alt="GitHub stats"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TanmoyBiswas478&layout=compact&theme=github_dark_dimmed&hide_border=true&langs_count=8" alt="Top languages"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=TanmoyBiswas478&theme=github_dark" alt="Profile details and contribution graph" width="95%"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=TanmoyBiswas478&bg_color=0d1117&color=58a6ff&line=1f6feb&point=ffffff&area=true&hide_border=true" alt="Contribution graph" width="95%"/>
+  <img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=TanmoyBiswas478&theme=github_dark" alt="Repositories per language"/>
+  <img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=TanmoyBiswas478&theme=github_dark" alt="Most committed languages"/>
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=TanmoyBiswas478&theme=github-dark-blue&hide_border=true" alt="Contribution streak"/>
 </p>
 
 <p align="center">
