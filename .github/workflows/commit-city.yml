@@ -1,0 +1,45 @@
+# Rebuilds assets/city.svg (the 3D commit city in the README) from the
+# latest contribution calendar, every day and on demand.
+name: Commit city
+
+on:
+  schedule:
+    - cron: "30 0 * * *"      # daily, 06:00 IST
+  workflow_dispatch:           # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]
+    paths: [".github/scripts/city.mjs", ".github/workflows/commit-city.yml"]
+
+permissions:
+  contents: write              # to commit the refreshed SVG
+
+concurrency:
+  group: commit-city
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Draw the city
+        run: node .github/scripts/city.mjs "${{ github.repository_owner }}" assets/city.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit if it changed
+        run: |
+          if git diff --quiet -- assets/city.svg; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/city.svg
+          git commit -m "Update commit city"
+          git push
